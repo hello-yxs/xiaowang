@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海狮刷题</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>省长小王，在线刷题</h1>
+            <div class="user-title" id="userTitle">
+                <span>当前称号：</span>
+                <span id="currentTitle">初学者</span>
+                <span class="progress-indicator">→</span>
+                <span>下一称号：</span>
+                <span id="nextTitle">进阶学习者</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- 首页/欢迎界面 -->
+            <section id="welcomeSection" class="section active">
+                <div class="welcome-content">
+                    <h2>欢迎使用轻量化刷题系统</h2>
+                    <p>上传你的题库，开始高效学习吧！</p>
+                    <div class="action-buttons">
+                        <button id="uploadBtn" class="btn-primary">上传题库</button>
+                        <input type="file" id="fileInput" accept=".txt" style="display: none;">
+                        <button id="startPracticeBtn" class="btn-secondary">开始练习</button>
+                        <button id="errorBookBtn" class="btn-secondary">错题练习</button>
+                    </div>
+                    <div class="uploaded-books" id="uploadedBooks">
+                        <h3>已上传题库</h3>
+                        <div id="bookList" class="book-list">
+                            <!-- 上传的题库会显示在这里 -->
+                            <p class="no-books">暂无上传的题库</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 练习界面 -->
+            <section id="practiceSection" class="section">
+                <div class="question-container">
+                    <div class="question-header">
+                        <span id="questionNumber">问题 1/10</span>
+                        <button id="backToHomeBtn" class="btn-secondary">返回首页</button>
+                    </div>
+                    <div class="question-content">
+                        <h3 id="questionText">问题内容将在这里显示</h3>
+                        <div id="optionsContainer" class="options-container">
+                            <!-- 选项将在这里动态生成 -->
+                        </div>
+                    </div>
+                    <div class="question-footer">
+                        <button id="prevQuestionBtn" class="btn-secondary" disabled>上一题</button>
+                        <button id="checkAnswerBtn" class="btn-primary">检查答案</button>
+                        <button id="nextQuestionBtn" class="btn-secondary">下一题</button>
+                        <button id="showAnswerBtn" class="btn-secondary">查看答案</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 结果界面 -->
+            <section id="resultSection" class="section">
+                <div class="result-content">
+                    <h2>练习完成！</h2>
+                    <div class="result-stats">
+                        <p>总分：<span id="totalScore">0</span>/<span id="totalQuestions">0</span></p>
+                        <p>正确率：<span id="accuracy">0%</span></p>
+                        <p>正确题目：<span id="correctCount">0</span></p>
+                        <p>错误题目：<span id="incorrectCount">0</span></p>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="reviewErrorsBtn" class="btn-primary">复习错题</button>
+                        <button id="restartPracticeBtn" class="btn-secondary">重新练习</button>
+                        <button id="backToHomeFromResultBtn" class="btn-secondary">返回首页</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 海狮刷题 - 小杨出品</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
